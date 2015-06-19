@@ -78,7 +78,7 @@ public class Uploader {
 			HttpPost request = new HttpPost("http://192.168.1.41:8888/api/rest/admin/upload");
 			request.addHeader("Content-Type", "application/json");
 			
-	        StringEntity params = new StringEntity(String.format("{\"title\":\"%s\",\"artist\":\"%s\",\"genre\":\"%s\",\"base64_mp3\":\"%s\"}", title, artist, genre, base64encoded));
+	        StringEntity params = new StringEntity(String.format("{\"title\":\"%s\",\"artist\":\"%s\",\"genre\":\"%s\",\"base64_mp3\":\"%s\",\"bpm\":\"%s\",\"mood\":\"%s\"}", title, artist, genre, base64encoded, bpm, mood));
 	        request.setEntity(params);
 	        HttpResponse response = httpClient.execute(request);
 	        
